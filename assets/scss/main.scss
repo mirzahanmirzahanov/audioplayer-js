@@ -13,7 +13,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #e4e9ed;
+	background-color: #515151;
 }
 
 .player {
@@ -39,6 +39,9 @@
 		margin: 25px 0;
 		.cover-img {
 			max-width: 200px;
+			&.active {
+				animation: rotateAnimation 4s linear infinite;
+			}
 		}
 	}
 	&__song {
@@ -60,7 +63,6 @@
 		.progress {
 			background-color: #2b3c5b;
 			border-radius: 5px;
-			width: 150px;
 			height: 6px;
 		}
 	}
@@ -74,6 +76,17 @@
 		margin: 45px auto 0 auto;
 		.btn{
 			max-width: 50px;
+			cursor: pointer;
 		}
 	}
+}
+
+@keyframes rotateAnimation {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+	
 }

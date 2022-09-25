@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e4e9ed;
+  background-color: #515151;
 }
 
 .player {
@@ -41,6 +41,9 @@
 .player__cover .cover-img {
   max-width: 200px;
 }
+.player__cover .cover-img.active {
+  animation: rotateAnimation 4s linear infinite;
+}
 .player__song {
   font-weight: 700;
   font-size: 24px;
@@ -52,7 +55,7 @@
 .player__progress-container {
   background-color: #e4e9ed;
   width: 100%;
-  height: 10px;
+  height: 6px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -61,8 +64,7 @@
 .player__progress-container .progress {
   background-color: #2b3c5b;
   border-radius: 5px;
-  width: 150px;
-  height: 6px;
+  height: 4px;
 }
 .player__buttons {
   display: flex;
@@ -75,4 +77,14 @@
 }
 .player__buttons .btn {
   max-width: 50px;
+  cursor: pointer;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
