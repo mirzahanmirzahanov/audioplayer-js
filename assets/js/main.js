@@ -11,9 +11,14 @@ const player = document.querySelector('.player'),
 
 	title = document.querySelector('.player__song'),
 	cover = document.querySelector('.cover-img'),
-	imgSrc = document.querySelector('.img__src');
+	imgSrc = document.querySelector('.img__src'),
+
+	volume = document.getElementById('volume-input');
+
+	audio.volume = 0.1
 
 //названия песен
+
 const songs = [
 	'Miyagi - Andy Panda-Atlant',
 	'Miyagi - Andy Panda-Yamakasi',
@@ -21,6 +26,11 @@ const songs = [
 	'Ollane feat. Miyagi - Andy Panda-Where Are You'
 ]
 
+//изменение громкости
+
+volume.addEventListener('change', () => {
+	audio.volume = volume.value
+})
 
 //песня по умолчанию
 
@@ -112,7 +122,7 @@ function setProgress(e) {
 	const duration = audio.duration
 
 	audio.currentTime = (clickX / width) * duration
-	
+
 }
 
 progressContainer.addEventListener('click', setProgress)
