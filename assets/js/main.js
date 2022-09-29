@@ -9,13 +9,15 @@ const player = document.querySelector('.player'),
 	progressContainer = document.querySelector('.player__progress-container'),
 	progress = document.querySelector('.progress'),
 
+	volumeContainer = document.querySelector('.player__volume-container'),
+	volume = document.querySelector('.volume'),
+
 	title = document.querySelector('.player__song'),
 	cover = document.querySelector('.cover-img'),
-	imgSrc = document.querySelector('.img__src'),
+	imgSrc = document.querySelector('.img__src');
 
-	volume = document.getElementById('volume-input');
 
-	audio.volume = 0.1
+audio.volume = 0.1
 
 //названия песен
 
@@ -27,10 +29,11 @@ const songs = [
 ]
 
 //изменение громкости
+// const volume = document.getElementById('volume-input');
 
-volume.addEventListener('change', () => {
-	audio.volume = volume.value
-})
+// volume.addEventListener('change', () => {
+// 	audio.volume = volume.value
+// })
 
 //песня по умолчанию
 
@@ -54,7 +57,6 @@ function playSong() {
 	audio.play()
 
 }
-
 
 //pause
 
@@ -126,5 +128,17 @@ function setProgress(e) {
 }
 
 progressContainer.addEventListener('click', setProgress)
+
+
+function changeVolume(e) {
+	// const width = this.clientWidth
+	const clickX = e.offsetX
+	volume.style.width = clickX + 'px'
+	audio.volume = clickX / 100
+}
+
+volumeContainer.addEventListener('click', changeVolume)
+
+//переключение на следующую песню
 
 audio.addEventListener('ended', nextSong)

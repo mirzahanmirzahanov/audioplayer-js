@@ -66,6 +66,22 @@
   border-radius: 5px;
   height: 6px;
 }
+.player__volume-container {
+  margin: 20px 0;
+  background-color: #e4e9ed;
+  width: 100px;
+  height: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.player__volume-container .volume {
+  background-color: #2b3c5b;
+  border-radius: 5px;
+  height: 6px;
+  width: 10px;
+}
 .player__buttons {
   display: flex;
   justify-content: space-between;
